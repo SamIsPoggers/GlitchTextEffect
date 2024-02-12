@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Align elements to the top of the screen */
+  align-items: center;
+  height: 100vh;
+  background-color: #00ff00; /* Green background color */
+  margin: 0;
+  overflow: hidden; /* Hide any overflowed content */
+}
+
+.container {
+  text-align: center;
+  width: 100%; /* Take full width of the screen */
+  padding: 20px; /* Add some padding to the container */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+.input-container {
+  display: flex;
+  justify-content: center; /* Align elements horizontally */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.output-container {
+  text-align: center; /* Center the generated text */
+  margin-top: 20px; /* Add some spacing between input and output */
+  position: relative; /* Add relative positioning to the output container */
+}
+
+.generated-text {
+  font-size: clamp(3.75rem, 15vw, 12.5rem); /* Adjusted font size with media query */
+  color: #fff;
+  font-family: 'Press Start 2P', cursive; /* Use Press Start 2P from Google Fonts */
+  /* Add text-stroke using text-shadow */
+  text-shadow: 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
+  border-radius: 5px;
+  resize: both; /* Allow resizing */
+  overflow: hidden;
+  z-index: 1; /* Set a higher z-index to make it movable */
+}
+
+.close-button {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Remove the hover styles for generated text */
+.generated-text:hover {
+  text-shadow: 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .generated-text {
+    font-size: clamp(3rem, 10vw, 10rem);
+  }
+}
